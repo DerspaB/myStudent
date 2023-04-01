@@ -70,7 +70,7 @@ export const StudentPage = () => {
   const agendarAlumno = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/students",
+        `${process.env.REACT_APP_API_URL}/api/students`,
         form
       );
       setForm({ ...initialForm });
