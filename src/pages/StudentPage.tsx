@@ -2,6 +2,11 @@ import {
   Alert,
   AlertColor,
   Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
   TextField,
   Typography,
 } from "@mui/material";
@@ -29,6 +34,7 @@ export const StudentPage = () => {
     nombre: "",
     grado: "",
     numeroAcudiente: "",
+    clase: "",
     fechaClase: getDay(4).format("YYYY-MM-DD"),
   };
 
@@ -48,7 +54,9 @@ export const StudentPage = () => {
   });
 
   const handleChangeForm = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e:
+      | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+      | SelectChangeEvent
   ) => {
     setForm({
       ...form,
@@ -168,6 +176,23 @@ export const StudentPage = () => {
             onChange={handleChangeForm}
             placeholder="Escriba el número de acudiente"
           />
+          <FormControl
+            variant="outlined"
+            sx={{ width: "100%", marginBottom: "15px" }}
+            error={form.clase.length < 1}
+          >
+            <InputLabel>Clase Refuerzo</InputLabel>
+            <Select
+              name="clase"
+              value={form.clase}
+              onChange={handleChangeForm}
+              label="Clase Refuerzo"
+            >
+              <MenuItem value={"Mecatrónica"}>Mecatrónica</MenuItem>
+              <MenuItem value={"Matemáticas"}>Matemáticas</MenuItem>
+              <MenuItem value={"Programación"}>Programación</MenuItem>
+            </Select>
+          </FormControl>
 
           <TextField
             name="fechaClase"

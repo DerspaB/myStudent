@@ -12,6 +12,7 @@ interface Students {
   nombre: string;
   grado: number;
   numeroAcudiente: string;
+  clase: string;
   fechaClase: string;
 }
 
@@ -42,6 +43,9 @@ export default function StudentsList({ students }: Props) {
                   <ul>
                     <li>
                       <strong>Grado:</strong> {student.grado}
+                    </li>
+                    <li>
+                      <strong>Clase:</strong> {student.clase}
                     </li>
                     <li>
                       <strong>Celular:</strong> {student.numeroAcudiente}
