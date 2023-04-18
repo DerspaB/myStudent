@@ -159,7 +159,7 @@ export const StudentPage = () => {
           />
           <FormControl
             variant="outlined"
-            sx={{ width: "100%", marginBottom: "15px" }}
+            sx={{ width: "100%" }}
             error={form.clase.length < 1}
           >
             <InputLabel>Grado</InputLabel>
