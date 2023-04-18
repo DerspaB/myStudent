@@ -167,6 +167,7 @@ export const StudentPage = () => {
             placeholder="Escriba su grado"
           />
           <TextField
+            type="number"
             value={form.numeroAcudiente}
             name="numeroAcudiente"
             fullWidth
