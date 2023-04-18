@@ -160,7 +160,7 @@ export const StudentPage = () => {
           <FormControl
             variant="outlined"
             sx={{ width: "100%" }}
-            error={form.clase.length < 1}
+            error={form.clase.length === 0}
           >
             <InputLabel>Grado</InputLabel>
             <Select
