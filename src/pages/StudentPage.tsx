@@ -53,6 +53,8 @@ export const StudentPage = () => {
     text: "",
   });
 
+  const listOfCourses = ["6", "7", "8", "9", "10", "11"];
+
   const handleChangeForm = (
     e:
       | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -155,17 +157,25 @@ export const StudentPage = () => {
             onChange={handleChangeForm}
             placeholder="Escriba su nombre"
           />
-          <TextField
-            value={form.grado}
-            name="grado"
-            fullWidth
-            error={form.grado.length < 1}
-            id="outlined-error"
-            label="Grado"
-            type="number"
-            onChange={handleChangeForm}
-            placeholder="Escriba su grado"
-          />
+          <FormControl
+            variant="outlined"
+            sx={{ width: "100%", marginBottom: "15px" }}
+            error={form.clase.length < 1}
+          >
+            <InputLabel>Grado</InputLabel>
+            <Select
+              name="grado"
+              value={form.grado}
+              onChange={handleChangeForm}
+              label="Clase Refuerzo"
+            >
+              {listOfCourses.map((course, index) => (
+                <MenuItem key={`${course} ${index}`} value={course}>
+                  {course}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
           <TextField
             type="number"
             value={form.numeroAcudiente}
