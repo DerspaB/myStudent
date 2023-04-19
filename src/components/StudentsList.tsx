@@ -29,6 +29,7 @@ export default function StudentsList({ students }: Props) {
         maxHeight: "600px",
         overflow: "auto",
         bgcolor: "background.paper",
+        borderRadius: "10px",
       }}
     >
       {students.map((student, index) => (
