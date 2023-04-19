@@ -31,6 +31,7 @@ export const StudentPage = () => {
   };
 
   const initialForm = {
+    codigo: "",
     nombre: "",
     grado: "",
     numeroAcudiente: "",
@@ -147,9 +148,20 @@ export const StudentPage = () => {
         >
           <Typography variant="h4">Agendar Asesoria</Typography>
           <TextField
+            value={form.codigo}
+            type="number"
+            name="codigo"
+            sx={{ marginTop: 6 }}
+            fullWidth
+            error={form.codigo.length < 3}
+            id="outlined-error"
+            label="Documento de identificación"
+            onChange={handleChangeForm}
+            placeholder="Escriba su documento"
+          />
+          <TextField
             value={form.nombre}
             name="nombre"
-            sx={{ marginTop: 6 }}
             fullWidth
             error={form.nombre.length < 3}
             id="outlined-error"

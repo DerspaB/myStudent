@@ -9,6 +9,7 @@ import Avatar from "@mui/material/Avatar";
 interface Students {
   _id: string;
   estado: boolean;
+  codigo: string;
   nombre: string;
   grado: number;
   numeroAcudiente: string;
@@ -24,8 +25,8 @@ export default function StudentsList({ students }: Props) {
   return (
     <List
       sx={{
-        width: "80%",
-        maxHeight: "700px",
+        width: "90%",
+        maxHeight: "600px",
         overflow: "auto",
         bgcolor: "background.paper",
       }}
@@ -41,6 +42,9 @@ export default function StudentsList({ students }: Props) {
               secondary={
                 <div className="w-full" key={index}>
                   <ul>
+                    <li>
+                      <strong>Codigo:</strong> {student.codigo}
+                    </li>
                     <li>
                       <strong>Grado:</strong> {student.grado}
                     </li>
